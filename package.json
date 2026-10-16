@@ -1,0 +1,1 @@
+{"name":"sweety-bonbons","version":"1.0.0","type":"module","scripts":{"test":"node --test tests/engine.test.js","balance":"node tests/balance.js","serve":"node tests/server.cjs","test:browser":"node tests/browser.cjs"},"devDependencies":{"playwright":"^1.58.0"}}

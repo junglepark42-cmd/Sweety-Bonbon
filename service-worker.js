@@ -1,0 +1,5 @@
+const VERSION='sweety-bonbons-1.0.0';
+const FILES=['./','./index.html','./css/game.css','./js/app.js','./js/engine.js','./js/levels.js','./js/storage.js','./js/audio.js','./manifest.webmanifest','./assets/forest.svg','./assets/unicorn.webp','./assets/dino.webp','./assets/rainbow.svg','./assets/icon-192.png','./assets/icon-512.png',...Array.from({length:6},(_,i)=>`./assets/candy-${i}.svg`)];
+self.addEventListener('install',e=>e.waitUntil(caches.open(VERSION).then(c=>c.addAll(FILES)).then(()=>self.skipWaiting())));
+self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k.startsWith('sweety-bonbons-')&&k!==VERSION).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
+self.addEventListener('fetch',e=>{if(e.request.method!=='GET')return;const url=new URL(e.request.url);if(url.origin!==self.location.origin||!url.href.startsWith(self.registration.scope))return;e.respondWith(fetch(e.request).then(r=>r.ok?r: caches.match(e.request).then(c=>c||r)).catch(()=>caches.match(e.request).then(r=>r|| (e.request.mode==='navigate'?caches.match('./index.html'):Response.error()))));});

@@ -1,0 +1,21 @@
+✔ 20 playable initial boards, deterministic seeds, no accidental initial matches (363.726965ms)
+✔ horizontal and vertical matches do not wrap across rows (0.714327ms)
+✔ invalid exchanges preserve board, score, moves and lock state (1.057905ms)
+✔ 4 creates row / column, 5 rainbow, T and L bomb (1.654695ms)
+✔ gravity compacts, fills, preserves imprisoned candy and segment boundaries (1.058977ms)
+✔ clear removes frosting and adjacent prisons, updates harvest (0.519814ms)
+✔ all bonuses activate and chain (2.044523ms)
+✔ all 10 unordered bonus combinations work without ordinary match (9.632564ms)
+✔ rainbow + ordinary candy clears the selected color (1.140159ms)
+✔ valid moves resolve all cascades, decrement exactly once, create bonuses (317.086014ms)
+✔ blocked board is detected, shuffled, and remains match-free (1.74116ms)
+✔ victory and defeat are based on normal objectives and moves (4.014964ms)
+✔ storage resumes game and records best scores, handles corrupt / blocked storage (3.632948ms)
+ℹ tests 13
+ℹ suites 0
+ℹ pass 13
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 819.03413
